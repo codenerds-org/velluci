@@ -30,7 +30,7 @@ const NavBar = () => {
                 </a>
             </div>
             <div className="sm:flex hidden m-4 gap-4">
-                <a href="#new-arrivals" className="flex flex-row md:text-2xl font-regular text-black">
+                <a href="#new" className="flex flex-row md:text-2xl font-regular text-black">
                     New Arrivals
                 </a>
                 <a href="#about" className="flex flex-row md:text-2xl font-regular text-black">

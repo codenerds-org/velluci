@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Product } from "../types/product";
 import { formatCurrencyString } from "use-shopping-cart";
+import Image from "next/image";
 
 type Props = Product & {
     hideMobile?: boolean
@@ -16,7 +17,7 @@ const ProductCard = (props: Props) => {
         <div className={`flex flex-col items-center ${hideMobile ? 'hidden md:flex' : 'flex'}`}>
             <Link href={`/products/${product.id}`}>
                 <div className="w-80 h-[26rem] md:w-[16vw] md:h-[45vh]">
-                    <img src={product.images[0]} className="h-full w-full object-cover" />
+                    <Image src={product.images[0]} height={416} width={320} alt="Product image" className="h-full w-full object-cover" />
                 </div>
             </Link>
             <Link href={`/products/${product.id}`}>

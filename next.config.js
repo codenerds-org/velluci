@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    images: {
+        domains: ['localhost', 'files.stripe.com'],
+    }
+}
 
 module.exports = nextConfig
