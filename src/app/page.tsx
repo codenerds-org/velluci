@@ -24,31 +24,31 @@ export default function Home() {
         <h1 className="text-4xl uppercase mt-16">New arrivals</h1>
         <div className="flex flex-row flex-wrap justify-center gap-8 mt-16">
           <div className="flex flex-col items-center">
-            <Image src="/images/1.png" width={300} height={300} />
+            {/* <Image src="/images/1.png" width={300} height={300} /> */}
             <p className="text-2xl mt-4">Black T-Shirt</p>
 
             <p className="text-2xl mt-4">$ 20.00</p>
           </div>
           <div className="flex flex-col items-center">
-            <Image src="/images/2.png" width={300} height={300} />
+            {/* <Image src="/images/2.png" width={300} height={300} /> */}
             <p className="text-2xl mt-4">Black T-Shirt</p>
 
             <p className="text-2xl mt-4">$ 20.00</p>
           </div>
           <div className="flex flex-col items-center">
-            <Image src="/images/3.png" width={300} height={300} />
+            {/* <Image src="/images/3.png" width={300} height={300} /> */}
             <p className="text-2xl mt-4">Black T-Shirt</p>
             
             <p className="text-2xl mt-4">$ 20.00</p>
           </div>
           <div className="flex-col items-center hidden md:flex">
-            <Image src="/images/4.png" width={300} height={300} />
+            {/* <Image src="/images/4.png" width={300} height={300} /> */}
             <p className="text-2xl mt-4">Black T-Shirt</p>
             
             <p className="text-2xl mt-4">$ 20.00</p>
           </div>
           <div className="flex-col items-center hidden md:flex">
-            <Image src="/images/5.png" width={300} height={300} />
+            {/* <Image src="/images/5.png" width={300} height={300} /> */}
             <p className="text-2xl mt-4">Black T-Shirt</p>
             
             <p className="text-2xl mt-4">$ 20.00</p>
