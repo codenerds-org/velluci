@@ -7,10 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        // mostly used for navbar, to hide the navbar on smallest mobile devices
+        'sm': '375px',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'desktop': 'url("/background-desktop.jpg")',
+        'desktop-model': 'url("/background-desktop-model.png")',
+        'mobile': 'url("/background-mobile.jpg")',
+        'mobile-model': 'url("/background-mobile-model.png")',
       },
     },
   },
