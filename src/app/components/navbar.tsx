@@ -1,7 +1,7 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import ShoppingCart from "./ShoppingCart";
 
 const NavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -30,26 +30,29 @@ const NavBar = () => {
                 </a>
             </div>
             <div className="sm:flex hidden m-4 gap-4">
-                <a href="#" className="flex flex-row md:text-2xl font-regular text-black">
+                <a href="#new-arrivals" className="flex flex-row md:text-2xl font-regular text-black">
                     New Arrivals
                 </a>
-                <a href="#" className="flex flex-row md:text-2xl font-regular text-black">
+                <a href="#about" className="flex flex-row md:text-2xl font-regular text-black">
                     About
                 </a>
-                <a href="#" className="flex flex-row md:text-2xl font-regular text-black">
+                <a href="#products" className="flex flex-row md:text-2xl font-regular text-black">
                     All Products
                 </a>
             </div>
             <div className="flex m-4 gap-8">
-                <a href="#" className="md:flex flex-row hidden text-2xl font-regular text-black">
+                <a className="md:flex flex-row hidden text-2xl font-regular text-black cursor-pointer">
                     Cart (0)
                 </a>
-                <a href="#" className="md:hidden flex-row flex text-2xl font-regular text-black">
+                <a className="md:hidden flex-row flex text-2xl font-regular text-black cursor-pointer">
                     <AiOutlineShoppingCart />
                 </a>
-                <a href="#" className="md:flex flex-row hidden text-2xl font-regular text-black">
-                    Login
-                </a>
+                <ShoppingCart />
+                {/* <Link href="/login">
+                    <a className="md:flex flex-row hidden text-2xl font-regular text-black">
+                        Login
+                    </a>
+                </Link> */}
             </div>
         </nav>
     );
