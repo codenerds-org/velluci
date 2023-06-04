@@ -16,6 +16,9 @@ module.exports = {
         'desktop-model': 'url("/background-desktop-model.png")',
         'mobile': 'url("/background-mobile.jpg")',
         'mobile-model': 'url("/background-mobile-model.png")',
+
+        'present-pic-1': 'url("/present-pic-1.jpg")',
+        'present-pic-2': 'url("/present-pic-2.jpg")',
       },
     },
   },
