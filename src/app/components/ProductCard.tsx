@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Product } from "../types/product";
+import { Product } from "@/app/types/product";
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
 import Image from "next/image";
-import config from "../../../config.json";
+import config from "@/../config.json";
 
 type Props = Product & {
   hideMobile?: boolean;

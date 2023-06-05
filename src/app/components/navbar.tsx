@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCart from "@/app/components/ShoppingCart";
 import { useShoppingCart } from "use-shopping-cart";
 
 const NavBar = () => {

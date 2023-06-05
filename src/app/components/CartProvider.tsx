@@ -1,8 +1,7 @@
 "use client";
 import React, { ReactNode } from "react";
 import { CartProvider } from "use-shopping-cart";
-import config from "../../../config.json";
-import { loadStripe } from "@stripe/stripe-js";
+import config from "@/../config.json";
 
 const Cart = ({ children }: { children: ReactNode }) => (
   <CartProvider

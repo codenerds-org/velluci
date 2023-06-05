@@ -4,7 +4,6 @@ import ProductCard from "@/app/components/ProductCard";
 import { Product } from "@/app/types/product";
 import useSWR from "swr";
 import LoadingPage from "@/app/components/Loading";
-import Link from "next/link";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
