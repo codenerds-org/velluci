@@ -1,16 +1,16 @@
 type Price = {
-    amount: number;
-    currency: string;
-}
+  amount: number;
+  currency: string;
+};
 
 export type Product = {
-    id: string;
-    active: boolean;
-    created_at: EpochTimeStamp;
+  id: string;
+  active: boolean;
+  created_at: EpochTimeStamp;
 
-    price: Price; 
+  price: Price;
 
-    name: string;
-    description: string;
-    images: string[];  // URL
-}
+  name: string;
+  description: string;
+  images: string[]; // URL
+};

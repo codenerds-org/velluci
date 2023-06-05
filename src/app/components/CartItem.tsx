@@ -8,9 +8,7 @@ export default function CartItem(item: CartEntry) {
 
   return (
     <div className="flex items-center gap-4 mb-3">
-      <div>
-        {name}
-      </div>
+      <div>{name}</div>
       <div className="ml-auto">{price}</div>
       <button className="hover:bg-emerald-50 transition-colors rounded-full duration-500 p-1">
         <FaTrash />
