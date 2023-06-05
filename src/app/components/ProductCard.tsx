@@ -1,17 +1,29 @@
 import Link from "next/link";
 import { Product } from "../types/product";
-import { formatCurrencyString } from "use-shopping-cart";
+import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
 import Image from "next/image";
+import config from "../../../config.json";
 
 type Props = Product & {
     hideMobile?: boolean
 }
 
 const ProductCard = (props: Props) => {
+    const { addItem } = useShoppingCart();
     const product = props as Product
     const hideMobile = props.hideMobile || false
-    
-    const price = formatCurrencyString({ value: product.price.amount, currency: process.env.CURRENCY || "USD", language: 'en-US' })
+
+    const addToCart = () => {
+        addItem({
+            id: product.id,
+            name: product.name,
+            price: product.price.amount,
+            currency: product.price.currency,
+            image: product.images[0],
+        }, { count: 1 });
+    };
+
+    const price = formatCurrencyString({ value: product.price.amount, currency: config.currency, language: config.locale })
 
     return (
         <div className={`flex flex-col items-center ${hideMobile ? 'hidden md:flex' : 'flex'}`}>

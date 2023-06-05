@@ -1,14 +1,14 @@
 "use client";
 import { BsMouse } from 'react-icons/bs'
-import ProductCard from './components/ProductCard';
-import { Product } from './types/product';
+import ProductCard from '@/app/components/ProductCard';
+import { Product } from '@/app/types/product';
 import useSWR from 'swr';
-import LoadingPage from './components/Loading';
+import LoadingPage from '@/app/components/Loading';
 import Link from 'next/link';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-export default function Home() {
+export default function Index() {
   const { data, error } = useSWR<Product[]>("/api/stripe/products?limit=5", fetcher)
   if (error) return <div>Failed to load products</div>
   if (!data) return <LoadingPage />
@@ -35,11 +35,11 @@ export default function Home() {
             <ProductCard key={product.id} hideMobile={index >= 3} {...product} />
           ))}
         </div>
-        <Link href="/products">
+        <a href="#products">
           <div className="flex flex-col items-center justify-center bg-gray-200/50 rounded-xl px-12 py-2 mt-8">
             <h2 className="text-4xl font-light">Check out more</h2>
           </div>
-        </Link>
+        </a>
       </section>
       <section className="flex flex-col gap-8 md:gap-0 min-h-screen mt-24" id="about">
         <div className="flex flex-row justify-between ml-[7.5vw] gap-8">

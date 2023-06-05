@@ -1,5 +1,5 @@
 import Lottie from 'react-lottie';
-import animationData from '../../../public/lottie/loading.json';
+import animationData from '@/../public/lottie/loading.json';
 import { useEffect, useState } from 'react';
 
 const LoadingPage = () => {
@@ -36,7 +36,7 @@ const LoadingPage = () => {
                 options={defaultOptions}
                 height={250}
                 width={250}
-                style={{ userSelect: 'none', display: 'flex', zIndex: 100, marginTop: '82px' }}
+                style={{ userSelect: 'none', display: 'flex', zIndex: 100, marginTop: '82px', cursor: 'default !important' }}
             />
             <h2 className="text-4xl font-light mt-16">
                 Loading
