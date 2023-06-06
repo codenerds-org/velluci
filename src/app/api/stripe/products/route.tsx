@@ -2,9 +2,10 @@ export const dynamic = 'force-dynamic'
 
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import config from "@/../config.json";
 
 const stripe = new Stripe(
-  process.env.DEBUG!
+  config.debug!
     ? process.env.STRIPE_TEST_SECRET_KEY!
     : process.env.STRIPE_LIVE_API_KEY!,
   {

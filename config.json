@@ -1,4 +1,5 @@
 {
   "currency": "EUR",
-  "locale": "en-US"
+  "locale": "en-US",
+  "debug": true
 }

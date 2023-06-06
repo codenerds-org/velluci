@@ -1,7 +1,7 @@
 import Lottie from "react-lottie";
 import animationData from "@/../public/lottie/empty-cart.json";
 import { FormEvent, MutableRefObject, useRef, useState } from "react";
-import { useShoppingCart } from "use-shopping-cart";
+import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
 import CartItem from "@/app/components/CartItem";
 import config from "@/../config.json";
 import { useOnClickOutside } from "usehooks-ts";
@@ -15,7 +15,7 @@ const ShoppingCart = () => {
     totalPrice,
     handleCartClick,
   } = useShoppingCart();
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState(config.debug ? "demo" : "idle");
 
   const cartRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(cartRef, () => shouldDisplayCart && handleCartClick());
@@ -51,14 +51,13 @@ const ShoppingCart = () => {
   return (
     <div
       className={`bg-white flex flex-col absolute right-3 md:right-9 top-14 
-            w-80 py-4 px-4 shadow-[0_5px_15px_0_rgba(0,0,0,.15)] rounded-md transition-opacity duration-500 ${
-              shouldDisplayCart ? "opacity-100" : "opacity-0"
-            }`}
+            w-80 py-4 px-4 shadow-[0_5px_15px_0_rgba(0,0,0,.15)] rounded-md transition-opacity duration-500 ${shouldDisplayCart ? "opacity-100" : "opacity-0"
+        }`}
       ref={cartRef}
     >
       {cartCount && cartCount > 0 ? (
         <>
-          {Object.values(cartDetails ?? {}).map((entry) => (
+          {Object.values(cartDetails ?? {}).map((entry, i) => (
             <CartItem key={entry.id} {...entry} />
           ))}
           <article className="mt-3 flex flex-col">
@@ -66,25 +65,30 @@ const ShoppingCart = () => {
               {totalPrice && totalPrice < 30
                 ? `You must have at least ${config.currency}0.30 in your basket`
                 : cartCount && cartCount > 20
-                ? "You cannot have more than 20 items"
-                : status === "redirect-error"
-                ? "Unable to redirect to Stripe checkout page"
-                : status === "no-items"
-                ? "Please add some items to your cart"
-                : null}
+                  ? "You cannot have more than 20 items"
+                  : status === "redirect-error"
+                    ? "Unable to redirect to Stripe checkout page"
+                    : status === "no-items"
+                      ? "Please add some items to your cart"
+                      : status === "demo"
+                        ? "This is a demo site, you cannot purchase anything"
+                        : null}
             </div>
             <button
               onClick={handleClick}
-              className="bg-emerald-50 hover:bg-emerald-500 hover:text-white transition-colors duration-500 text-emerald-500 py-3 px-5 rounded-md w-100 disabled:bg-slate-300 disabled:cursor-not-allowed disabled:text-white"
+              className="bg-emerald-50 hover:bg-emerald-500 hover:text-white transition-colors duration-500 text-emerald-500 py-3 px-5 rounded-md w-100 disabled:cursor-not-allowed"
               disabled={
                 (totalPrice && totalPrice < 30) ||
-                (cartCount && cartCount > 20) ||
-                status == "no-items"
+                  (cartCount && cartCount > 20) ||
+                  status == "no-items"
                   ? true
                   : false
+                    || status == "demo"
+                    ? true
+                    : false
               }
             >
-              {status !== "loading" ? "Proceed to checkout" : "Loading..."}
+              {status !== "loading" ? `Proceed to checkout ${formatCurrencyString({ value: totalPrice || 0, currency: config.currency, language: config.locale })}` : "Loading..."}
             </button>
           </article>
         </>
