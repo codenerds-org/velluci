@@ -32,6 +32,6 @@ export async function GET(request: NextRequest) {
       images: product.images,
     });
   } catch (error) {
-    return NextResponse.json({ error });
+    return NextResponse.json({ error }, { status: 500 });
   }
 }
