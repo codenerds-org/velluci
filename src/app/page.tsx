@@ -24,7 +24,7 @@ export default function Index() {
           className="text-white z-10 drop-shadow-2xl whitespace-nowrap"
           style={{ fontSize: "16vw", lineHeight: 1 }}
         >
-          Death Collection
+          Peace Collection
         </h1>
         <div className="absolute h-screen w-screen z-20 bg-mobile-model md:bg-desktop-model bg-cover" />
         <div className="absolute bottom-10 z-30 flex flex-col items-center">
@@ -38,7 +38,7 @@ export default function Index() {
       >
         <h1 className="text-6xl uppercase mt-16">New arrivals</h1>
         <h2 className="text-2xl font-light">
-          Check out our newest collection called &quot;Death&quot;
+          Check out our newest collection called &quot;Peace&quot;
         </h2>
         <div className="flex flex-wrap justify-center gap-8 mt-16">
           {latestProducts.map((product, index) => (
@@ -89,7 +89,7 @@ export default function Index() {
       >
         <h1 className="text-6xl uppercase mt-16">All Products</h1>
         <h2 className="text-2xl font-light">
-          Check out our newest collection called &quot;Death&quot;
+          Check out our newest collection called &quot;Peace&quot;
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-16">
           {data.map((product) => (
