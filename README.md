@@ -26,6 +26,7 @@ yarn dev
 # Known issues
 
 - shopping cart isn't fully hidden. Only opacity is set to 0 to simulate hiding it - this is because of animation tha't won't appear if the shopping cart would be set to hidden
+- config.json is for client side only, so it's not secure. The problem with .env.local is that it's not loading correctly while using 'use client'. I'm still looking for a solution to this problem. For now there will be two config files, one for client and one for server.
 
 # References
 
