@@ -40,19 +40,19 @@ const NavBar = () => {
       </div>
       <div className="sm:flex hidden m-4 gap-4">
         <a
-          href="#new"
+          href="/#new"
           className="flex flex-row md:text-2xl font-regular text-black"
         >
           New Arrivals
         </a>
         <a
-          href="#about"
+          href="/#about"
           className="flex flex-row md:text-2xl font-regular text-black"
         >
           About
         </a>
         <a
-          href="#products"
+          href="/#products"
           className="flex flex-row md:text-2xl font-regular text-black"
         >
           All Products
